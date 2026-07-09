@@ -20,13 +20,9 @@
   <!-- ***** Header ***** -->
 
   <header class="header" role="banner" id="top">
-    <div class="row header__row">
-      <div class="header__logo">
-        <h1 class="header__title">Akesh Mallia</h1>
-      </div>
+    <div class="row">
       <nav class="nav" role="navigation">
         <ul class="nav__items">
-          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
           <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
           <li class="nav__item">
             <a href="contact.html" class="nav__link">Contact</a>
@@ -34,33 +30,26 @@
         </ul>
       </nav>
     </div>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+          <span>I'm ever curious so that I can build the impossible.</span>
+        </h1>
+        <p>Third year mechanical engineering student, active in student rocketry, vibrations research, and industry.</p>
+        <a href="#projects" class="btn btn--pink">View My Work</a>
+      </div>
+    </div>
   </header>
 
   <main role="main">
 
-    <!-- ***** Hero Section ***** -->
-
-    <section class="hero" id="home">
-      <div class="row">
-        <div class="hero__content">
-          <div class="hero__text">
-            <h2 class="hero__heading">I'm ever curious so that I can build the impossible.</h2>
-            <p class="hero__subtitle">Third year mechanical engineering student. Building innovative projects in rocketry, research, and beyond.</p>
-            <a href="#projects" class="btn btn--primary">View My Work</a>
-          </div>
-          <div class="hero__image-container">
-            <img class="hero__image" src="./images/hero-photo.jpg" alt="Akesh Mallia" />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ***** Projects ***** -->
 
-    <section class="projects" id="projects">
+    <section class="work" id="projects">
       <div class="row">
-        <h2>My Projects</h2>
-        <div class="projects__grid">
+        <h2>My Work</h2>
+        <div class="work__boxes">
+
           <!-- Project 1 -->
           <a href="project-1.html" class="project-tile">
             <div class="project-tile__image-wrapper">
@@ -141,7 +130,6 @@
 
   <footer role="contentinfo" class="footer">
     <div class="row">
-      <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
           <a href="mailto:your-email@example.com" title="Send me an email" target="_blank">
