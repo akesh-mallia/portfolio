@@ -337,8 +337,17 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding: var(--gutter-normal) 0;
+}
+
+.nav__logo {
+    font-family: 'Jost', sans-serif;
+    font-size: 4.2rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 1px;
 }
 
 .nav__items {
@@ -412,11 +421,47 @@ body:not(.user-is-tabbing) a:focus {
     background-attachment: fixed;
     font-size: var(--font-size-normal);
 }
+.header__text-box {
+    height: calc(100vh - 10rem);
+    display: grid;
+    grid-template-columns: 1fr 42rem;
+    align-items: center;
+    gap: 8rem;
+}
+
+.header__profile {
+    justify-self: end;
+
+    padding: 1.4rem;
+    background: rgba(255, 50, 88, 0.35);
+
+    border-radius: 2rem;
+
+    box-shadow:
+        0 0 45px rgba(255,50,88,.45),
+        0 0 90px rgba(255,50,88,.18);
+}
+
+.header__profile-bg {
+    display: none;
+}
+
+.header__profile-image {
+    display: block;
+
+    width: 40rem;
+    height: 52rem;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 2rem;
+}
 
 .header__text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
+    transform: none;
+    max-width: 68rem;
 }
 
 .header__text p {
@@ -439,6 +484,27 @@ body:not(.user-is-tabbing) a:focus {
 .header-minimal {
     background: var(--black);
     border-bottom: var(--border-light);
+}
+
+@media (max-width: 950px) {
+
+    .header__text-box {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 4rem;
+        padding-top: 4rem;
+    }
+
+    .header__profile {
+        justify-self: center;
+        order: -1;
+    }
+
+    .header__profile-image {
+        width: 26rem;
+        height: 34rem;
+    }
 }
 
 /* --------------------------------------- */
