@@ -17,11 +17,15 @@
   <!-- ***** Header ***** -->
 
   <header class="header-minimal" role="banner" id="top">
-    <div class="row">
+    <div class="row header__row">
+      <div class="header__logo">
+        <h1 class="header__title">Akesh Mallia</h1>
+      </div>
       <nav class="nav" role="navigation">
         <ul class="nav__items">
-          <li class="nav__item"><a href="index.html" class="nav__link">← Back to Home</a></li>
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
           <li class="nav__item"><a href="index.html#projects" class="nav__link">Projects</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -64,29 +68,23 @@
               </p>
               <p>Connect with me professionally.</p>
             </div>
-
-            <div class="contact-method">
-              <h3>GitHub</h3>
-              <p>
-                <a href="https://github.com/akesh-mallia/" class="link" target="_blank">github.com/akesh-mallia</a>
-              </p>
-              <p>Check out my code and projects.</p>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ***** Resume ***** -->
+    <!-- ***** Resume Preview ***** -->
 
     <section class="contact-section">
       <div class="row">
         <div class="contact-content">
           <h2>My Resume</h2>
           <p>
-            Download my resume to learn more about my experience, skills, and background.
+            Here's a preview of my resume. You can also <a href="./path-to-your-resume.pdf" download class="link">download it as a PDF</a>.
           </p>
-          <a href="./path-to-your-resume.pdf" class="btn btn--pink" download>Download Resume (PDF)</a>
+          <div class="resume-preview">
+            <iframe src="./path-to-your-resume.pdf" title="Resume PDF Preview"></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -99,8 +97,8 @@
     <div class="row">
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
-          <a href="https://github.com/akesh-mallia/" title="Link to Github Profile" target="_blank">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          <a href="mailto:your-email@example.com" title="Send me an email" target="_blank">
+            <img src="./images/email.svg" class="footer__social-image" alt="Email">
           </a>
         </li>
         <li class="footer__social-link-item">
