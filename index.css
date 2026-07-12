@@ -35,7 +35,14 @@
     --line-height-small: 1.2;
 
     --black: #000;
-    --pink: #ff3258;
+    /*
+     * Site accent controls. Change these two values to try another accent
+     * color. Keep the RGB channels in sync with the hex value so the glow
+     * and transparent overlays use the same color.
+     */
+    --accent: #3d9fea;
+    --accent-rgb: 173, 216, 230;
+    --pink: var(--accent); /* Backwards-compatible name used throughout the site. */
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
 
@@ -343,11 +350,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__logo {
+    display: inline-block;
     font-family: 'Jost', sans-serif;
     font-size: 4.2rem;
     font-weight: 500;
     color: var(--white);
     letter-spacing: 1px;
+    text-decoration: none;
 }
 
 .nav__items {
@@ -413,53 +422,20 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: rgba(30, 30, 33, 0.58);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     font-size: var(--font-size-normal);
-}
-.header__text-box {
-    height: calc(100vh - 10rem);
-    display: flex;
-    align-items: center;
-}
-
-.header__text {
-    position: static;
-    transform: none;
-    max-width: 68rem;
-}
-
-.header__text p {
-    margin: 1.5rem 0 3.5rem;
-    max-width: var(--container-medium-width);
-    font-family: 'Jost', sans-serif;
-    font-size: var(--font-size-medium);
-}
-
-@media(max-width: 500px) {
-    .header {
-        text-align: center;
-    }
-
-    .header__text p {
-        transform: scale(.8);
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
 }
 
 .header-minimal {
     background: var(--black);
     border-bottom: var(--border-light);
-}
-
-@media (max-width: 950px) {
-
-    .header__text-box {
-        text-align: center;
-    }
 }
 
 /* --------------------------------------- */
@@ -498,11 +474,11 @@ body:not(.user-is-tabbing) a:focus {
 .about__profile {
     justify-self: end;
     padding: 1.4rem;
-    background: rgba(255, 50, 88, 0.35);
+    background: rgba(var(--accent-rgb), 0.35);
     border-radius: 2rem;
     box-shadow:
-        0 0 45px rgba(255,50,88,.45),
-        0 0 90px rgba(255,50,88,.18);
+        0 0 45px rgba(var(--accent-rgb), .45),
+        0 0 90px rgba(var(--accent-rgb), .18);
 }
 
 .about__profile-image {
@@ -594,7 +570,7 @@ body:not(.user-is-tabbing) a:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 50, 88, 0.2);
+    background: rgba(var(--accent-rgb), 0.2);
     transition: opacity 0.3s ease;
     opacity: 1;
 }
@@ -623,11 +599,20 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .project-hero {
+    /*
+     * Per-project background building block:
+     * --project-hero-image: url('./images/your-image.jpg');
+     * --project-hero-overlay: rgba(0, 0, 0, 0.4);
+     */
+    --project-hero-image: none;
+    --project-hero-overlay: rgba(0, 0, 0, 0.4);
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 60vh;
+    background-color: var(--black);
+    background-image: var(--project-hero-image);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -642,7 +627,39 @@ body:not(.user-is-tabbing) a:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--project-hero-overlay);
+}
+
+/* Optional modifiers for project hero sections. */
+.project-hero--short {
+    min-height: 45vh;
+}
+
+.project-hero--tall {
+    min-height: 75vh;
+}
+
+.project-hero--dark {
+    --project-hero-overlay: rgba(0, 0, 0, 0.62);
+}
+
+.project-hero--light {
+    --project-hero-overlay: rgba(0, 0, 0, 0.22);
+}
+
+.home-hero {
+    --project-hero-image: url('./images/header.jpg');
+    --project-hero-overlay: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.52));
+    min-height: 100vh;
+}
+
+.home-hero .project-hero__content {
+    max-width: 95rem;
+    text-align: left;
+}
+
+.home-hero .btn {
+    margin-top: var(--gutter-small);
 }
 
 .project-hero__content {
@@ -696,7 +713,7 @@ body:not(.user-is-tabbing) a:focus {
 .deliverable-item {
     padding: var(--gutter-normal);
     border-left: 3px solid var(--pink);
-    background: rgba(255, 50, 88, 0.05);
+    background: rgba(var(--accent-rgb), 0.05);
 }
 
 .deliverable-item h3 {
@@ -712,6 +729,25 @@ body:not(.user-is-tabbing) a:focus {
     max-width: var(--container-medium-width);
 }
 
+@media (max-width: 900px) {
+    .project-hero {
+        min-height: 50vh;
+        background-attachment: scroll;
+    }
+
+    .project-hero--short {
+        min-height: 38vh;
+    }
+
+    .project-hero--tall {
+        min-height: 60vh;
+    }
+
+    .home-hero {
+        min-height: 100vh;
+    }
+}
+
 .contact__content {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 42rem;
@@ -722,17 +758,17 @@ body:not(.user-is-tabbing) a:focus {
 .contact__image-frame {
     justify-self: end;
     padding: 1.4rem;
-    background: rgba(255, 50, 88, 0.35);
+    background: rgba(var(--accent-rgb), 0.35);
     border-radius: 2rem;
     box-shadow:
-        0 0 45px rgba(255,50,88,.45),
-        0 0 90px rgba(255,50,88,.18);
+        0 0 45px rgba(var(--accent-rgb), .45),
+        0 0 90px rgba(var(--accent-rgb), .18);
 }
 
 .contact__image {
     display: block;
-    width: 40rem;
-    height: 42rem;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 2rem;
 }
@@ -747,7 +783,7 @@ body:not(.user-is-tabbing) a:focus {
     border-radius: 4px;
     overflow: hidden;
     max-height: 1000px;
-    background: rgba(255, 50, 88, 0.03);
+    background: rgba(var(--accent-rgb), 0.03);
 }
 
 .resume-preview object {
