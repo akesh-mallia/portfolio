@@ -19,8 +19,10 @@
   <header class="header-minimal" role="banner" id="top">
     <div class="row">
       <nav class="nav" role="navigation">
+        <div class="nav__logo">Akesh Mallia</div>
         <ul class="nav__items">
           <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
           <li class="nav__item"><a href="index.html#projects" class="nav__link">Projects</a></li>
           <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
@@ -33,13 +35,18 @@
     <!-- ***** Contact Section ***** -->
 
     <section class="contact" id="contact">
-      <div class="row">
-        <h2>Get in Touch</h2>
-        <div class="contact__info">
-          <p>
-            Are you looking for a fast-performing and user-friendly website to represent your product or business? or looking for any kind of consultation? or want to ask questions? or have some advice for me or just want to say "Hi 👋" in any case feel free to Let me know. I will do my best to respond back. 😊 The quickest way to reach out to me is via an email.
-          </p>
-          <a href="mailto:your-email@example.com" class="btn btn--pink">your-email@example.com</a>
+      <div class="row contact__content">
+        <div class="contact__text">
+          <h2>Get in Touch</h2>
+          <div class="contact__info">
+            <p>
+              Please feel free to reach out to me via email. I'm always open to discussing new projects, opportunities, or collaborations.
+            </p>
+            <a href="mailto:akeshmallia@gmail.com" class="btn btn--pink">akeshmallia@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact__image-frame">
+          <img src="./images/contact-image.jpg" alt="Akesh Mallia working on an engineering project" class="contact__image">
         </div>
       </div>
     </section>
@@ -49,11 +56,13 @@
     <section class="contact" id="resume">
       <div class="row">
         <h2>My Resume</h2>
-        <p style="margin-bottom: var(--gutter-medium);">
-          Here's a preview of my resume. You can also <a href="./path-to-your-resume.pdf" download class="link__text">download it as a PDF <span>↓</span></a>.
+        <p class="resume__intro">
+          Here's a preview of my resume. You can also <a href="./Akesh_Mallia_Resume_2026_07_12.pdf" download="Akesh_Mallia_Resume_2026_07_12.pdf" class="link">download it as a PDF <span>↓</span></a>.
         </p>
         <div class="resume-preview">
-          <iframe src="./path-to-your-resume.pdf" title="Resume PDF Preview"></iframe>
+          <object data="./Akesh_Mallia_Resume_2026_07_12.pdf#view=FitH" type="application/pdf" title="Resume PDF Preview">
+            <p>Your browser cannot preview PDFs. <a href="./Akesh_Mallia_Resume_2026_07_12.pdf" download="Akesh_Mallia_Resume_2026_07_12.pdf">Download the resume instead.</a></p>
+          </object>
         </div>
       </div>
     </section>
@@ -66,7 +75,7 @@
     <div class="row">
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
-          <a href="mailto:your-email@example.com" title="Send me an email" target="_blank">
+          <a href="mailto:akeshmallia@gmail.com" title="Send me an email" target="_blank">
             <img src="./images/email.svg" class="footer__social-image" alt="Email">
           </a>
         </li>
@@ -78,7 +87,7 @@
       </ul>
 
       <p>
-        &copy; 2024 - Akesh Mallia.
+        &copy; 2026 - Akesh Mallia.
       </p>
     </div>
   </footer>
