@@ -730,9 +730,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .project-media video.project-media__content {
-    aspect-ratio: 9 / 16;
     max-height: 60rem;
-    object-fit: cover;
+    object-fit: contain;
     background: var(--black);
 }
 
