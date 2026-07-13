@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
-  <title>Project Six | Akesh Mallia</title>
+  <title>NASA CubeSats | Akesh Mallia</title>
 
   <meta name="description" content="Learn about this project and what I built.">
   <link rel="stylesheet" href="index.css" />
@@ -19,6 +19,8 @@
   <header class="header-minimal" role="banner" id="top">
     <div class="row">
       <nav class="nav" role="navigation">
+        <a href="index.html" class="nav__logo">Akesh Mallia</a>
+
         <ul class="nav__items">
           <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
           <li class="nav__item">
@@ -33,11 +35,12 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/project-6.png');">
+    <section class="project-hero" style="background-image: url('./images/project-6.jpg');">
       <div class="row">
         <div class="project-hero__content">
-          <h1 class="project-hero__heading">Project Six</h1>
-          <p class="project-hero__subtitle">A brief one-liner about the project</p>
+          <h1 class="project-hero__heading">ME 201 Crane</h1>
+          <p class="project-hero__subtitle">University of Wisconsin-Madison</p>
+          <p class="project-hero__subtitle">2024</p>
         </div>
       </div>
     </section>
@@ -47,13 +50,12 @@
     <section class="project-section">
       <div class="row">
         <div class="project-content">
-          <h2>What It Was</h2>
+          <h2>Background</h2>
           <p>
-            Write a compelling description of what the project was. What problem were you trying to solve? What was the goal? 
-            Provide context and background that helps the reader understand the scope and significance of the project.
+            ME 201 is the introduction to mechanical engineering course, where throughout the semester, I worked on a crane project in a group of three. The crane needed to fit within size and weight (900 g) restrictions, and critically, it needed to lift 1.75 kg.
           </p>
           <p>
-            Include any relevant details about the project scope, timeline, team size, or industry context.
+           	The design we picked leveraged a block-and-tackle pulley system for mechanical advantage. It was largely constructed of laser-cut acrylic sheets, as well as 3D-printed brackets. My contributions to the team were focused on manufacturing, assembly, and testing.
           </p>
         </div>
       </div>
@@ -64,68 +66,45 @@
     <section class="project-section">
       <div class="row">
         <div class="project-content">
-          <h2>Challenges I Faced</h2>
-          <ul class="challenges-list">
-            <li>First major challenge and how you approached it</li>
-            <li>Second challenge and the obstacles you encountered</li>
-            <li>Technical or personal challenges that tested you</li>
-            <li>How you persevered through difficulties</li>
-          </ul>
-          <p>
-            Elaborate on each challenge. Readers want to understand the struggle, not just the solution. What made these challenges difficult? 
-            How did you think about them differently as you progressed?
+          <h2>Challenges</h2>
+          <h3> Acrylic Snapping </h3>
+          <p> 
+            One thing we did not consider when we used the pulleys was that as the string wound around them, it would ride up the pulley wall. This is because the string was not being fed perfectly in line with the pulley. After a certain point of riding up the wall, the string would fall back into the valley of the pulley, causing a jolt in the system. This jolt happened to send a shock down the boom arm and into the chassis, causing a major fracture! To fix this, I 3D printed a guide for the string such that it fed onto the center of the pulley, and I enlarged the cross-section of certain sections of the chassis.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ***** What I Learned ***** -->
+    <!-- ***** Results ***** -->
 
     <section class="project-section">
       <div class="row">
         <div class="project-content">
-          <h2>What I Learned</h2>
-          <p>
-            Discuss the key takeaways from this project. What technical skills did you develop? What soft skills improved? 
-            How has this experience changed your approach to problem-solving?
-          </p>
-          <ul class="learnings-list">
-            <li><strong>Technical:</strong> Specific technologies, tools, or methodologies you mastered</li>
-            <li><strong>Process:</strong> How you improved your workflow or methodology</li>
-            <li><strong>Mindset:</strong> Lessons about collaboration, perseverance, or innovation</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** What I Produced ***** -->
-
-    <section class="project-section">
-      <div class="row">
-        <div class="project-content">
-          <h2>What I Produced</h2>
-          <p>
-            Detail the final deliverables. Be specific about what was built, designed, or achieved. Include metrics or results if applicable.
-          </p>
+          <h2>Results</h2>
           <div class="project-deliverables">
             <div class="deliverable-item">
-              <h3>Deliverable 1</h3>
-              <p>Description of what was produced and its impact.</p>
+              <h3>Successful lift of 1.75 kg during the class competition</h3>
+              <p>
+                We accomplished what we set out to do: lift the load for as little mass as we could.
+              </p>
             </div>
             <div class="deliverable-item">
-              <h3>Deliverable 2</h3>
-              <p>Description of what was produced and its impact.</p>
+              <h3>Gained new skills from my first semester</h3>
+              <p>
+                Built CAD assembly in SOLIDWORKS, motor code in Arduino IDE, basic breadboard circuits, and Excel calculators of stability/lift time.
+              </p>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
 
     <!-- ***** Back to Projects ***** -->
 
-    <section class="project-section">
+    <section class="section">
       <div class="row">
-        <div class="project-content" style="text-align: center;">
+        <div class="project-content" style="margin: 0 auto; text-align: center;">
           <a href="index.html#projects" class="btn btn--pink">← Back to All Projects</a>
         </div>
       </div>
@@ -151,7 +130,7 @@
       </ul>
 
       <p>
-        &copy; 2024 - Akesh Mallia.
+        &copy; 2026 - Akesh Mallia.
       </p>
     </div>
   </footer>

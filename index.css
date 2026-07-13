@@ -699,6 +699,205 @@ body:not(.user-is-tabbing) a:focus {
     max-width: var(--container-normal-width);
 }
 
+/* Reusable side-by-side text and media layout for project sections. */
+.project-content--with-media {
+    width: 100%;
+    max-width: var(--container-max-width);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(28rem, 42rem);
+    align-items: center;
+    gap: clamp(3rem, 6vw, 9rem);
+}
+
+.project-content__body > :first-child {
+    margin-top: 0;
+}
+
+.project-media {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    border: var(--border-light);
+    background: rgba(var(--accent-rgb), 0.05);
+}
+
+.project-media__content {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 60rem;
+    object-fit: contain;
+}
+
+.project-media video.project-media__content {
+    aspect-ratio: 9 / 16;
+    max-height: 60rem;
+    object-fit: cover;
+    background: var(--black);
+}
+
+.project-media img.project-media__content,
+.project-carousel__slide img {
+    cursor: zoom-in;
+}
+
+/* Reusable photo carousel. Add .project-carousel anywhere a gallery is needed. */
+.project-carousel {
+    width: 100%;
+}
+
+.project-carousel__viewport {
+    overflow: hidden;
+    border: var(--border-light);
+    background: rgba(var(--accent-rgb), 0.05);
+}
+
+.project-carousel__track {
+    display: flex;
+    transition: transform 350ms ease;
+}
+
+.project-carousel__slide {
+    flex: 0 0 100%;
+    margin: 0;
+    aspect-ratio: 16 / 10;
+}
+
+.project-carousel__slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-carousel__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gutter-small);
+    margin-top: var(--gutter-normal);
+}
+
+.project-carousel__button,
+.project-carousel__dot {
+    border: 1px solid var(--pink);
+    color: var(--white);
+    background: transparent;
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+.project-carousel__button {
+    width: 4.4rem;
+    height: 4.4rem;
+    font-size: 2.4rem;
+    line-height: 1;
+    border-radius: 0.8rem;
+}
+
+.project-carousel__close {
+    display: none;
+}
+
+.project-carousel__dots {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-carousel__dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+
+.project-carousel__button:hover,
+.project-carousel__button:focus-visible,
+.project-carousel__dot:hover,
+.project-carousel__dot:focus-visible,
+.project-carousel__dot[aria-current="true"] {
+    color: var(--black);
+    background: var(--pink);
+}
+
+/* Full-screen state for any reusable project carousel. */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+.project-carousel--lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: var(--gutter-small);
+    padding: clamp(2rem, 4vw, 5rem);
+    background: rgba(0, 0, 0, 0.86);
+}
+
+.project-carousel--lightbox .project-carousel__viewport {
+    min-height: 0;
+    border: 0;
+    background: transparent;
+}
+
+.project-carousel--lightbox .project-carousel__track,
+.project-carousel--lightbox .project-carousel__slide {
+    height: 100%;
+}
+
+.project-carousel--lightbox .project-carousel__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: auto;
+}
+
+.project-carousel--lightbox .project-carousel__slide img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: default;
+}
+
+.project-carousel--lightbox .project-carousel__controls {
+    margin: 0;
+}
+
+.project-carousel--lightbox .project-carousel__close {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1;
+}
+
+/* Lightbox used by standalone project images. */
+.project-image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(2rem, 5vw, 7rem);
+    background: rgba(0, 0, 0, 0.86);
+}
+
+.project-image-lightbox__image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.project-image-lightbox__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
 .challenges-list,
 .learnings-list {
     list-style-position: inside;
@@ -753,6 +952,24 @@ body:not(.user-is-tabbing) a:focus {
 
     .home-hero {
         min-height: 100vh;
+    }
+
+    .project-content--with-media {
+        grid-template-columns: 1fr;
+        gap: var(--gutter-medium);
+    }
+
+    .project-media {
+        max-width: 60rem;
+        justify-self: center;
+    }
+
+    .project-carousel__slide {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-carousel--lightbox {
+        padding: 2rem;
     }
 }
 
