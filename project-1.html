@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
   <title>High-Pressure Quick Disconnect | Akesh Mallia</title>
 
@@ -39,7 +39,8 @@
       <div class="row">
         <div class="project-hero__content">
           <h1 class="project-hero__heading">High-Pressure Quick Disconnect</h1>
-          <p class="project-hero__subtitle">Enabling remote disconnect of fill line on rocket.</p>
+          <p class="project-hero__subtitle">Wisconsin Space Program (WISP)</p>
+          <p class="project-hero__subtitle">2026</p>
         </div>
       </div>
     </section>
@@ -49,13 +50,12 @@
     <section class="project-section">
       <div class="row">
         <div class="project-content">
-          <h2>What It Was</h2>
+          <h2>Background</h2>
           <p>
-            Write a compelling description of what the project was. What problem were you trying to solve? What was the goal? 
-            Provide context and background that helps the reader understand the scope and significance of the project.
+            To fill our pressure-fed liquid rocket with gaseous nitrogen (GN2), the Wisconsin Space Program (WISP) needed a high-pressure (4,000 psi) fill line. Per competition rules, this fill line could not be remotely detached once the fill is complete. So, in Spring 2026, I owned a project for a remotely actuated quick disconnect for this fill line.
           </p>
           <p>
-            Include any relevant details about the project scope, timeline, team size, or industry context.
+            This was done via a system that siphoned some of the GN2 from the fill to pressurize a pneumatic cylinder that pushed out an arm, releasing the disconnect socket.
           </p>
         </div>
       </div>
@@ -66,68 +66,43 @@
     <section class="project-section">
       <div class="row">
         <div class="project-content">
-          <h2>Challenges I Faced</h2>
-          <ul class="challenges-list">
-            <li>First major challenge and how you approached it</li>
-            <li>Second challenge and the obstacles you encountered</li>
-            <li>Technical or personal challenges that tested you</li>
-            <li>How you persevered through difficulties</li>
-          </ul>
-          <p>
-            Elaborate on each challenge. Readers want to understand the struggle, not just the solution. What made these challenges difficult? 
-            How did you think about them differently as you progressed?
-          </p>
+          <h2>Challenges</h2>
+          <h3> Seperation Failure </h3>
+          <p> The major motivator of the design process was that if this system failed, the rocket could not launch, as it would be stuck to the ground. My heart dropped during the test campaign when I experienced a separation failure of the system in April 2026 cold flows, just a month before the slated launch of the rocket. At first, the failure was confusing. However, through attempts at recreating the failure, I pinpointed the cause to the fill line not being vented. When pressurized, the bearings in the socket of the quick disconnect were pushed onto the plug, causing sufficient force to prevent detachment. After diagnosing the issue, the system had a 100% success rate.</p>
+          <h3> Sizing Error </h3>
+          <p>I first designed the system in isolation. This meant that I got a system that worked well when detaching from a rocket without an airframe. However, once the airframe was added, I noticed a crucial sizing error. The travel of the pneumatic piston arm was obstructed by the hole cut out in the airframe. Further, the vehicle side of the quick disconnect poked out of the diameter of the rocket. I did two things: to shorten the disconnect, I rearranged fluid fittings to remove an adapter, and I 3D printed a spacer to fit on the piston arm, allowing the travel of the arm to occur further away from the airframe.</p>
         </div>
       </div>
     </section>
 
-    <!-- ***** What I Learned ***** -->
+    <!-- ***** Results ***** -->
 
     <section class="project-section">
       <div class="row">
         <div class="project-content">
-          <h2>What I Learned</h2>
-          <p>
-            Discuss the key takeaways from this project. What technical skills did you develop? What soft skills improved? 
-            How has this experience changed your approach to problem-solving?
-          </p>
-          <ul class="learnings-list">
-            <li><strong>Technical:</strong> Specific technologies, tools, or methodologies you mastered</li>
-            <li><strong>Process:</strong> How you improved your workflow or methodology</li>
-            <li><strong>Mindset:</strong> Lessons about collaboration, perseverance, or innovation</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** What I Produced ***** -->
-
-    <section class="project-section">
-      <div class="row">
-        <div class="project-content">
-          <h2>What I Produced</h2>
-          <p>
-            Detail the final deliverables. Be specific about what was built, designed, or achieved. Include metrics or results if applicable.
-          </p>
+          <h2>Results</h2>
           <div class="project-deliverables">
             <div class="deliverable-item">
-              <h3>Deliverable 1</h3>
-              <p>Description of what was produced and its impact.</p>
+              <h3>Separation Success!</h3>
+              <p>On May 30, 2026, the disconnect separated, allowing for the launch of Northstar. This makes for a 100% success rate during flight scenarios :)</p>
             </div>
             <div class="deliverable-item">
-              <h3>Deliverable 2</h3>
-              <p>Description of what was produced and its impact.</p>
+              <h3>Pneumatic quick disconnect</h3>
+              <p>The device and its parts are now in-house, with application to future launch vehicles.</p>
             </div>
           </div>
+          <p>
+            Overall, I learned a lot about the design cycle in aerospace through this project. By designing, testing, and verifying the device, I gained experience in common struggles of a project: most notably, neglecting to consider other subsystems when designing. It was incredibly satisfying to see my part actuating and leading to the success of the mission.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- ***** Back to Projects ***** -->
 
-    <section class="project-section">
+    <section class="section">
       <div class="row">
-        <div class="project-content" style="text-align: center;">
+        <div class="project-content" style="margin: 0 auto; text-align: center;">
           <a href="index.html#projects" class="btn btn--pink">← Back to All Projects</a>
         </div>
       </div>

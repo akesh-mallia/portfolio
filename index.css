@@ -455,6 +455,10 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-normal);
 }
 
+.about__resume-link {
+    justify-self: start;
+}
+
 .about__facts {
     margin-top: var(--gutter-normal);
     padding-left: 2.4rem;
@@ -504,6 +508,10 @@ body:not(.user-is-tabbing) a:focus {
     }
 
     .about__profile {
+        justify-self: center;
+    }
+
+    .about__resume-link {
         justify-self: center;
     }
 
