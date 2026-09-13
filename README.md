@@ -41,3 +41,8 @@ Each `project-1.html` through `project-6.html` now has a centered badge immediat
 Search for `HERO BADGE` in the project page. Edit the text inside `project-hero__year`, the logo `src`, and its organization `alt` text. Keep these values in sync with the matching tile in `index.html`; these are static HTML copies, so neither updates automatically. Initial values match the current homepage tiles, including NASA's `2024` year.
 
 The `project-hero__badge` styles in `index.css` control the centered layout. Hero logos scale from 60 to 72 pixels while remaining square; the year text scales from 20 to 24 pixels.
+
+
+### Linking a hero logo
+
+In each project HTML file (including the template), search for `ORGANIZATION LINK` and replace `href="#"` on `project-hero__logo-link` with the organization's full URL, such as `href="https://example.com"`. Each logo links independently, so projects can point to specific organization or lab pages. Links open in the same tab. Until you set a URL, `#` is a placeholder that stays on the current page. The year remains plain text.
