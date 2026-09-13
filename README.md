@@ -46,3 +46,10 @@ The `project-hero__badge` styles in `index.css` control the centered layout. Her
 ### Linking a hero logo
 
 In each project HTML file (including the template), search for `ORGANIZATION LINK` and replace `href="#"` on `project-hero__logo-link` with the organization's full URL, such as `href="https://example.com"`. Each logo links independently, so projects can point to specific organization or lab pages. Links open in the same tab. Until you set a URL, `#` is a placeholder that stays on the current page. The year remains plain text.
+
+
+## Challenge cards
+
+Every project page and the template uses a `challenge-grid`. Search for `CHALLENGE CARDS` to edit the section. Each `article.challenge-card` contains a title and a definition list with **Problem**, **Solution**, and **Outcome**. Keep the three labels in that order and use brief, specific descriptions supported by the project.
+
+Duplicate an article to add a challenge and update its decorative number. Two cards sit side by side on desktop; a single card spans the available width. All steps stack on mobile. Styles are grouped at the end of `index.css`; results tiles retain their separate styling.

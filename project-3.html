@@ -69,16 +69,47 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
+        <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
-          <h3> Solenoid Stiction </h3>
-          <p> 
-            	The first challenge I faced was stiction in my control solenoid. Due to what I believe to be static friction in the solenoid spool, the control algorithm would command the solenoid to open by a few percent, but it would not correspond to a change in load until a certain threshold in opening was met. This resulted in a stepping increase in load, and often, an overshoot compared to the ramped increase in setpoint. I addressed this issue by dithering the control signal, that is, putting Gaussian white noise over the control signal such that the spool was constantly moving and in the realm of kinetic friction. 
-          </p>
-          <h3> Procurement Challenges </h3>
-          <p>
-            Since I was selecting and ordering parts for the whole system, I had to manage multiple vendors, which took more weeks than I had expected. To manage the impacts of this, I worked in parallel to procurement everywhere I could. For example, while parts were on order, I wrote the LabVIEW state machine software, and I CAD modeled the system in NX.
-          </p>
+          <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">01</span>
+              <h3>Getting past solenoid stiction</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>Small valve commands produced no load change until a threshold was reached. Load then jumped, often overshooting the ramped setpoint. I suspected static friction in the spool.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I added Gaussian white noise to the control signal as dither, keeping the spool moving rather than repeatedly overcoming static friction.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>The completed system applied automated ramp-and-soak loads within the setpoint requirements.</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">02</span>
+              <h3>Keeping progress moving while parts shipped</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>Selecting parts for the entire system meant coordinating multiple vendors. Procurement took weeks longer than I expected.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I worked in parallel: while hardware was on order, I wrote the LabVIEW state machine and modeled the system in NX.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>The wait became development time, with software and CAD work progressing before the hardware arrived.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
         </div>
       </div>
     </section>

@@ -74,12 +74,47 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
+        <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
-          <h3> Seperation Failure </h3>
-          <p> The major motivator of the design process was that if this system failed, the rocket could not launch, as it would be stuck to the ground. My heart dropped during the test campaign when I experienced a separation failure of the system in April 2026 cold flows, just a month before the slated launch of the rocket. At first, the failure was confusing. However, through attempts at recreating the failure, I pinpointed the cause to the fill line not being vented. When pressurized, the bearings in the socket of the quick disconnect were pushed onto the plug, causing sufficient force to prevent detachment. After diagnosing the issue, the system had a 100% success rate.</p>
-          <h3> Sizing Error </h3>
-          <p>I first designed the system in isolation. This meant that I got a system that worked well when detaching from a rocket without an airframe. However, once the airframe was added, I noticed a crucial sizing error. The travel of the pneumatic piston arm was obstructed by the hole cut out in the airframe. Further, the vehicle side of the quick disconnect poked out of the diameter of the rocket. I did two things: to shorten the disconnect, I rearranged fluid fittings to remove an adapter, and I 3D printed a spacer to fit on the piston arm, allowing the travel of the arm to occur further away from the airframe.</p>
+          <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">01</span>
+              <h3>A disconnect that would not disconnect</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>During April 2026 cold flows, the disconnect failed just a month before launch. If it stayed attached, the rocket could not leave the ground.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I reproduced the failure and traced it to an unvented fill line: pressure forced the socket bearings against the plug, preventing separation.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>After the issue was diagnosed, the system separated successfully in every subsequent test and at launch.</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">02</span>
+              <h3>Making room for the airframe</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>My initial design worked without the airframe. Once integrated, the airframe blocked the piston arm, and the disconnect extended beyond the rocket diameter.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I removed an adapter by rearranging the fluid fittings and 3D printed a piston-arm spacer to move its travel away from the airframe.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>The revised packaging shortened the disconnect and provided clearance for the arm. I learned to design around neighboring subsystems from the start.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
         </div>
       </div>
     </section>

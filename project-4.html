@@ -74,12 +74,29 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
+        <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
-          <h3> Learning Curve </h3>
-          <p> 
-            Starting as a freshman in Spring 2025, this project very quickly stretched my brain by introducing me to concepts like making Fourier transforms. Vibrations and non-linear dynamics can get very complicated quite quickly. I address this challenge by modeling the system in simpler ways (i.e, only a limited number of nodes in a finite element model). I also learn as quickly as I can through using my resources (lectures, professors to ask questions).
-          </p>
+          <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">01</span>
+              <h3>Starting simple with a complex structure</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>As a freshman, I was learning Fourier transforms and vibration analysis while investigating the response of an entire stadium.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I broke the problem into simpler models with fewer finite element nodes, using lectures and conversations with professors to build my understanding.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>I developed an ANSYS model whose acceleration frequency content matched the measured data, and presented the research at the 2026 undergraduate symposium.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
         </div>
       </div>
     </section>
