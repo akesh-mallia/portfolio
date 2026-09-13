@@ -749,6 +749,17 @@ body:not(.user-is-tabbing) a:focus {
     font-variant-numeric: tabular-nums;
 }
 
+.project-hero__logo-link {
+    display: block;
+    flex: 0 0 auto;
+    border-radius: 14px;
+}
+
+.project-hero__logo-link:hover,
+.project-hero__logo-link:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
 .project-hero__logo {
     display: block;
     flex: 0 0 auto;
