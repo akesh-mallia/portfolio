@@ -24,11 +24,20 @@ Each tile contains a `PROJECT BADGE` comment followed by:
 | --- | --- |
 | 1 | High-Pressure Quick Disconnect |
 | 2 | Northstar Rocket |
-| 3 | Camp Randall Vibrations Research |
-| 4 | NASA CubeSats |
-| 5 | Hydraulic Test Fixture |
+| 3 | Hydraulic Test Fixture |
+| 4 | Camp Randall Vibrations Research |
+| 5 | NASA CubeSats |
 | 6 | ME 201 Crane |
 
 All six years and logos start as placeholders. The same logo file can be reused on multiple tiles. Logos fit inside a 48-pixel white square without cropping. Badge styling is in the Project Tiles section of `index.css`. Keep the grayscale filter on `.project-tile__image`, not its wrapper, to preserve the badge colors.
 
 Review changes on the feature branch before merging into the live `2026_07_08` branch.
+
+
+## Project hero badges
+
+Each `project-1.html` through `project-6.html` now has a centered badge immediately below its hero heading, replacing the organization and year subtitles. `project-template.html` includes a placeholder version for future projects.
+
+Search for `HERO BADGE` in the project page. Edit the text inside `project-hero__year`, the logo `src`, and its organization `alt` text. Keep these values in sync with the matching tile in `index.html`; these are static HTML copies, so neither updates automatically. Initial values match the current homepage tiles, including NASA's `2024` year.
+
+The `project-hero__badge` styles in `index.css` control the centered layout. Hero logos scale from 60 to 72 pixels while remaining square; the year text scales from 20 to 24 pixels.

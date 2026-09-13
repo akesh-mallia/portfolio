@@ -725,6 +725,41 @@ body:not(.user-is-tabbing) a:focus {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Centered, larger version of the homepage tile badge. */
+.project-hero__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: 100%;
+    gap: 14px;
+    margin: 24px auto 0;
+    padding: 10px 10px 10px 22px;
+    border: 1px solid #344353;
+    border-radius: 28px;
+    background: #111b26;
+    color: #f0e9f2;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .22);
+}
+
+.project-hero__year {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(20px, 2.2vw, 24px);
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.project-hero__logo {
+    display: block;
+    flex: 0 0 auto;
+    width: clamp(60px, 6vw, 72px);
+    height: clamp(60px, 6vw, 72px);
+    object-fit: contain;
+    padding: 4px;
+    border-radius: 14px;
+    background: #fff;
+}
+
 .project-hero__subtitle {
     font-size: var(--font-size-medium);
     color: var(--white);
