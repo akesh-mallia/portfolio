@@ -1271,3 +1271,17 @@ body.lightbox-open {
     max-height: 85rem;
     object-fit: contain;
 }
+
+
+/* Unframed image and caption within the existing responsive media layout. */
+.project-figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.project-figure__caption {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white-1);
+}
