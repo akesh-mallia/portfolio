@@ -35,7 +35,7 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/project-5.webp');">
+    <section class="project-hero" style="background-image: url('./images/IMG_8380_cropped.jpeg');">
       <div class="row">
         <div class="project-hero__content">
           <h1 class="project-hero__heading">Automated Hydraulic Load Application</h1>
@@ -71,8 +71,13 @@
       <div class="row">
         <div class="project-content">
           <h2>Challenges</h2>
-          <h3> To be added once internship is complete... </h3>
+          <h3> Solenoid Stiction </h3>
           <p> 
+            	The first challenge I faced was stiction in my control solenoid. Due to what I believe to be static friction in the solenoid spool, the control algorithm would command the solenoid to open by a few percent, but it would not correspond to a change in load until a certain threshold in opening was met. This resulted in a stepping increase in load, and often, an overshoot compared to the ramped increase in setpoint. I addressed this issue by dithering the control signal, that is, putting Gaussian white noise over the control signal such that the spool was constantly moving and in the realm of kinetic friction. 
+          </p>
+          <h3> Procurement Challenges </h3>
+          <p>
+            Since I was selecting and ordering parts for the whole system, I had to manage multiple vendors, which took more weeks than I had expected. To manage the impacts of this, I worked in parallel to procurement everywhere I could. For example, while parts were on order, I wrote the LabVIEW state machine software, and I CAD modeled the system in NX.
           </p>
         </div>
       </div>
@@ -86,8 +91,15 @@
           <h2>Results</h2>
           <div class="project-deliverables">
             <div class="deliverable-item">
-              <h3>To be added once internship is complete...</h3>
+              <h3>Successful load application within setpoint requirements</h3>
               <p>
+                Automated control of load with a ramp and soak setpoint profile.
+              </p>
+            </div>
+            <div class="deliverable-item">
+              <h3>Decreased runtime from 1 hour to 5 minutes</h3>
+              <p>
+                Saved engineer time by automatically adding load to the system and acquiring data. Especially important as this is a test that is conducted for every production unit.
               </p>
             </div>
           </div>
