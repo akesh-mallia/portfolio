@@ -624,8 +624,8 @@ body:not(.user-is-tabbing) a:focus {
 .project-tile__logo {
     display: block;
     flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     padding: 4px;
     border-radius: 10px;
     background: #fff;
