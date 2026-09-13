@@ -752,8 +752,8 @@ body:not(.user-is-tabbing) a:focus {
 .project-hero__logo {
     display: block;
     flex: 0 0 auto;
-    width: clamp(60px, 6vw, 72px);
-    height: clamp(60px, 6vw, 72px);
+    width: clamp(75px, 6vw, 80px);
+    height: clamp(75px, 6vw, 80px);
     object-fit: contain;
     padding: 4px;
     border-radius: 14px;
