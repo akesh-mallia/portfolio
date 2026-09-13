@@ -96,10 +96,11 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content project-content--challenges">
+        <div class="project-content project-content--with-media">
+          <div class="project-content__body">
           <h2>Challenges</h2>
           <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
-          <div class="challenge-grid">
+          <div class="challenge-grid challenge-grid--beside-media">
             <article class="challenge-card">
               <span class="challenge-card__number" aria-hidden="true">01</span>
               <h3>Tracing a fracture back to the pulley</h3>
@@ -119,6 +120,13 @@
               </dl>
             </article>
           </div>
+          </div>
+          <figure class="project-media">
+            <video class="project-media__content" autoplay muted loop playsinline controls aria-label="Crane pulley shock demonstration">
+              <source src="./images/craneshock.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
         </div>
       </div>
     </section>

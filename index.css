@@ -1285,3 +1285,9 @@ body.lightbox-open {
     line-height: 1.5;
     color: var(--white-1);
 }
+
+
+/* Keep challenge steps readable when a video occupies the adjacent column. */
+.challenge-grid--beside-media .challenge-card:only-child .challenge-card__steps {
+    grid-template-columns: 1fr;
+}
