@@ -583,12 +583,63 @@ body:not(.user-is-tabbing) a:focus {
     opacity: 1;
 }
 
-.project-tile:hover .project-tile__image {
+.project-tile:hover .project-tile__image,
+.project-tile:focus-visible .project-tile__image {
     filter: grayscale(0%) brightness(1);
 }
 
-.project-tile:hover .project-tile__overlay {
+.project-tile:hover .project-tile__overlay,
+.project-tile:focus-visible .project-tile__overlay {
     opacity: 0;
+}
+
+/* Badge is a sibling of the filtered photo, above the colored overlay.
+ * Its opaque background and logo stay the same color on hover/focus.
+ */
+.project-tile__badge {
+    position: absolute;
+    z-index: 1;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px 10px 20px;
+    border: 1px solid #344353;
+    border-radius: 22px;
+    background: #111b26;
+    color: #f0e9f2;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .22);
+    pointer-events: none;
+}
+
+.project-tile__year {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 16px;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.project-tile__year-label {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #b5c9db;
+}
+
+.project-tile__logo {
+    display: block;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    border-radius: 10px;
+    background: #fff;
+    object-fit: contain;
 }
 
 .project-tile__content h3 {
