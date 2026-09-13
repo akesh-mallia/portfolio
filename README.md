@@ -10,8 +10,8 @@ Each tile contains a `PROJECT BADGE` comment followed by:
 
 ```html
 <div class="project-tile__badge">
-  <span class="project-tile__year"><span class="project-tile__year-label">Year</span>YYYY</span>
-  <img class="project-tile__logo" src="./images/logos/placeholder.svg" alt="Organization logo placeholder" width="40" height="40" />
+  <span class="project-tile__year">YYYY</span>
+  <img class="project-tile__logo" src="./images/logos/placeholder.svg" alt="Organization logo placeholder" width="48" height="48" />
 </div>
 ```
 
@@ -29,6 +29,6 @@ Each tile contains a `PROJECT BADGE` comment followed by:
 | 5 | Hydraulic Test Fixture |
 | 6 | ME 201 Crane |
 
-All six years and logos start as placeholders. The same logo file can be reused on multiple tiles. Logos fit inside a 40-pixel white square without cropping. Badge styling is in the Project Tiles section of `index.css`. Keep the grayscale filter on `.project-tile__image`, not its wrapper, to preserve the badge colors.
+All six years and logos start as placeholders. The same logo file can be reused on multiple tiles. Logos fit inside a 48-pixel white square without cropping. Badge styling is in the Project Tiles section of `index.css`. Keep the grayscale filter on `.project-tile__image`, not its wrapper, to preserve the badge colors.
 
 Review changes on the feature branch before merging into the live `2026_07_08` branch.
