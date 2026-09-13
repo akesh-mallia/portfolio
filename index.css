@@ -1261,3 +1261,13 @@ body.lightbox-open {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Unframed photo beside project results; stacks below text on small screens. */
+.project-results__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 85rem;
+    object-fit: contain;
+}
