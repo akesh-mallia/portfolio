@@ -1291,3 +1291,67 @@ body.lightbox-open {
 .challenge-grid--beside-media .challenge-card:only-child .challenge-card__steps {
     grid-template-columns: 1fr;
 }
+
+
+/* Mobile navigation and hero: keep the menu above, rather than over, the text. */
+@media (max-width: 600px) {
+    .header {
+        position: relative;
+    }
+
+    .nav {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 20px;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    .nav__logo {
+        /* min-content wraps Akesh and Mallia onto separate lines. */
+        width: min-content;
+        font-size: clamp(28px, 7vw, 35px);
+        line-height: 1.15;
+        white-space: normal;
+    }
+
+    .nav__items {
+        min-width: 0;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 4px 12px;
+        font-size: clamp(14px, 3.6vw, 16px);
+    }
+
+    .nav__item:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .nav__link {
+        white-space: nowrap;
+    }
+
+    .home-hero {
+        /* Increase toward 100% to show more of the photo's right side. */
+        background-position: 85% center;
+        background-size: cover;
+        min-height: 75vh;
+        min-height: 75svh;
+        padding: 48px 0;
+    }
+
+    .home-hero > .row {
+        width: 100%;
+    }
+
+    .home-hero .project-hero__heading {
+        font-size: clamp(38px, 9vw, 54px);
+        line-height: 1.15;
+    }
+
+    .home-hero .project-hero__subtitle {
+        font-size: clamp(19px, 4.8vw, 24px);
+        line-height: 1.5;
+    }
+}
