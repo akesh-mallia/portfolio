@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
-  <title>High-Pressure Quick Disconnect | Akesh Mallia</title>
+  <title>Automated Hydraulic Load Application | Akesh Mallia</title>
 
   <meta name="description" content="Learn about this project and what I built.">
   <link rel="stylesheet" href="index.css" />
@@ -35,14 +35,14 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/project-1.JPG');">
+    <section class="project-hero" style="background-image: url('./images/IMG_8380_cropped.jpeg');">
       <div class="row">
         <div class="project-hero__content">
-          <h1 class="project-hero__heading">High-Pressure Quick Disconnect</h1>
+          <h1 class="project-hero__heading">Automated Hydraulic Load Application</h1>
           <div class="project-hero__badge">
             <span class="project-hero__year">2026</span>
-            <a class="project-hero__logo-link" href="https://wisconsinspace.com/">
-              <img class="project-hero__logo" src="./images/logos/wisp.png" alt="WISP" width="72" height="72" />
+            <a class="project-hero__logo-link" href="https://rocketlabcorp.com/space-systems/separation-systems/">
+              <img class="project-hero__logo" src="./images/logos/rocketlab.png" alt="Rocket Lab" width="72" height="72" />
             </a>
           </div>
         </div>
@@ -55,16 +55,17 @@
       <div class="row">
         <div class="project-content project-content--with-media">
           <div class="project-content__body">
-            <h2>Background</h2>
-            <p>
-              To fill our pressure-fed liquid rocket with gaseous nitrogen (GN2), the Wisconsin Space Program (WISP) needed a high-pressure (4,000 psi) fill line. Per competition rules, this fill line could not be remotely detached once the fill is complete. So, in Spring 2026, I owned a project for a remotely actuated quick disconnect for this fill line.
-            </p>
-            <p>
-              This was done via a system that siphoned some of the GN2 from the fill to pressurize a pneumatic cylinder that pushed out an arm, releasing the disconnect socket.
-            </p>
-          </div>
-          <figure class="project-media">
-            <img class="project-media__content" src="./images/QD_CAD.png" alt="CAD model of the high-pressure quick disconnect">
+          <h2>Background</h2>
+          <p>
+          	The separation systems team had a pull-test fixture used to measure preload in a separation system. Prior to my internship, the fixture was operated via a manual lever hydraulic pump, which led to long test runtimes. My project was to automate load application via a control system.
+          </p>
+          <p>
+            The system consists of a pump, motor, solenoid control valve, solenoid relief valve, and other valves and fittings. It is operated via a state machine that I implemented on a National Instruments cDAQ running LabVIEW. One of the states is a PID control loop to both increase and decrease load.
+          </p>
+        </div>
+          <figure class="project-figure">
+            <img class="project-results__image" src="./images/utm.jpg" alt="Universal Testing Machine" loading="lazy" />
+            <figcaption class="project-figure__caption"><em>The automated pull test fixture is similar in application to a universal testing machine (UTM), but it is hydraulically actuated and controlled via a motor, pump, and solenoids.</em></figcaption>
           </figure>
         </div>
       </div>
@@ -76,40 +77,41 @@
       <div class="row">
         <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
+          <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
           <div class="challenge-grid">
             <article class="challenge-card">
               <span class="challenge-card__number" aria-hidden="true">01</span>
-              <h3>A slow, not quick, disconnect</h3>
+              <h3>Getting past solenoid stiction</h3>
               <dl class="challenge-card__steps">
                 <div class="challenge-card__step">
                   <dt>Problem</dt>
-                  <dd>During April 2026 cold flows, the disconnect failed. The cylinder actuated, but the line did not release for about a minute, where finally, it popped off.</dd>
+                  <dd>Small valve commands produced no load change until a threshold was reached. Load then jumped, often overshooting the ramped setpoint. I suspected static friction in the spool.</dd>
                 </div>
                 <div class="challenge-card__step">
                   <dt>Solution</dt>
-                  <dd>I reproduced the failure and traced it to an unvented fill line. Pressure forced the socket bearings against the plug, preventing separation. I changed the procedure to always vent the line before separation.</dd>
+                  <dd>I added Gaussian white noise to the control signal as dither, keeping the spool in the realm of kinetic friction. I also reduced the load increase rate and removed the integral term on increasing load.</dd>
                 </div>
                 <div class="challenge-card__step challenge-card__step--outcome">
                   <dt>Outcome</dt>
-                  <dd>The system separated successfully in every subsequent test and at launch.</dd>
+                  <dd>The stepped response on load increase was improved.</dd>
                 </div>
               </dl>
             </article>
             <article class="challenge-card">
               <span class="challenge-card__number" aria-hidden="true">02</span>
-              <h3>Making room for the airframe</h3>
+              <h3>Keeping progress moving while parts shipped</h3>
               <dl class="challenge-card__steps">
                 <div class="challenge-card__step">
                   <dt>Problem</dt>
-                  <dd> My initial design did not account for the airframe, as it was not manfucatured yet. However, once integrated, the airframe blocked the piston arm at certain clocked positions.</dd>
+                  <dd>Selecting parts for the entire system meant coordinating multiple vendors. Procurement took 2 weeks longer than I expected.</dd>
                 </div>
                 <div class="challenge-card__step">
                   <dt>Solution</dt>
-                  <dd>I removed an adapter by rearranging the fluid fittings and 3D printed a piston-arm spacer to move the pneumatic cylinder's travel away from the airframe.</dd>
+                  <dd>I worked in parallel: while hardware was on order, I wrote the LabVIEW state machine and modeled the system in NX.</dd>
                 </div>
                 <div class="challenge-card__step challenge-card__step--outcome">
                   <dt>Outcome</dt>
-                  <dd>The revised packaging shortened the disconnect and provided clearance for the arm. I learned to design around neighboring subsystems from the start.</dd>
+                  <dd>The wait became development time, with software being plug and play as soon as the hardware arrived.</dd>
                 </div>
               </dl>
             </article>
@@ -122,28 +124,21 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content project-content--with-media">
-          <div class="project-content__body">
-            <h2>Results</h2>
-            <div class="project-deliverables">
-              <div class="deliverable-item">
-                <h3>Separation Success!</h3>
-                <p>On May 30, 2026, the disconnect separated, allowing for the launch of Northstar. This makes for a 100% success rate during flight scenarios :)</p>
-              </div>
-              <div class="deliverable-item">
-                <h3>Pneumatic quick disconnect</h3>
-                <p>The device and its parts are now in-house, with application to future launch vehicles.</p>
-              </div>
+        <div class="project-content">
+          <h2>Results</h2>
+          <div class="project-deliverables">
+            <div class="deliverable-item">
+              <h3>Successful load application within setpoint requirements</h3>
+              <p>
+                Automated control of load with a ramp and soak setpoint profile.
+              </p>
             </div>
-            <p>
-              Overall, I learned a lot about the design cycle in aerospace through this project. By designing, testing, and verifying the device, I gained experience in common struggles of a project: most notably, neglecting to consider other subsystems when designing. It was incredibly satisfying to see my part actuating and leading to the success of the mission.
-            </p>
-          </div>
-          <figure class="project-media">
-            <video class="project-media__content" autoplay muted loop playsinline controls>
-              <source src="./images/IMG_7424.mp4" type="video/mp4">
-              Your browser does not support embedded video.
-            </video>
+            <div class="deliverable-item">
+              <h3>Decreased runtime from 1 hour to 5 minutes</h3>
+              <p>
+                Saved engineer time by automatically adding load to the system and acquiring data. Especially important as this is a test that is conducted for every production unit.
+              </p>
+            </div>
           </div>
         </div>
       </div>

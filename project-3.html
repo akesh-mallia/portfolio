@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
-  <title>Automated Hydraulic Load Application | Akesh Mallia</title>
+  <title>Northstar Rocket | Akesh Mallia</title>
 
   <meta name="description" content="Learn about this project and what I built.">
   <link rel="stylesheet" href="index.css" />
@@ -35,14 +35,14 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/IMG_8380_cropped.jpeg');">
+    <section class="project-hero" style="background-image: url('./images/project-2.jpg');">
       <div class="row">
         <div class="project-hero__content">
-          <h1 class="project-hero__heading">Automated Hydraulic Load Application</h1>
+          <h1 class="project-hero__heading">Northstar Rocket</h1>
           <div class="project-hero__badge">
-            <span class="project-hero__year">2026</span>
-            <a class="project-hero__logo-link" href="https://rocketlabcorp.com/space-systems/separation-systems/">
-              <img class="project-hero__logo" src="./images/logos/rocketlab.png" alt="Rocket Lab" width="72" height="72" />
+            <span class="project-hero__year">2025-2026</span>
+            <a class="project-hero__logo-link" href="https://wisconsinspace.com/">
+              <img class="project-hero__logo" src="./images/logos/wisp.png" alt="WISP" width="72" height="72" />
             </a>
           </div>
         </div>
@@ -55,18 +55,40 @@
       <div class="row">
         <div class="project-content project-content--with-media">
           <div class="project-content__body">
-          <h2>Background</h2>
-          <p>
-          	The separation systems team had a pull-test fixture used to measure preload in a separation system. Prior to my internship, the fixture was operated via a manual lever hydraulic pump, which led to long test runtimes. My project was to automate load application via a control system.
-          </p>
-          <p>
-            The system consists of a pump, motor, solenoid control valve, solenoid relief valve, and other valves and fittings. It is operated via a state machine that I implemented on a National Instruments cDAQ running LabVIEW. One of the states is a PID control loop to both increase and decrease load.
-          </p>
-        </div>
-          <figure class="project-figure">
-            <img class="project-results__image" src="./images/utm.jpg" alt="Universal Testing Machine" loading="lazy" />
-            <figcaption class="project-figure__caption"><em>The automated pull test fixture is similar in application to a universal testing machine (UTM), but it is hydraulically actuated and controlled via a motor, pump, and solenoids.</em></figcaption>
-          </figure>
+            <h2>Background</h2>
+            <p>
+              A liquid rocket powered by isopropyl alcohol and liquid oxygen. The rocket is 13.5 feet tall and 8 inches in diameter, with a thrust of 1000 lbf. This marks the first liquid rocket developed in the state of Wisconsin.
+            </p>
+            <p>
+              My contributions were largely in the ground support equipment (GSE) of the rocket, specifically in enabling the smooth fill operations of the vehicle.
+            </p>
+          </div>
+          <div class="project-carousel" aria-label="Northstar Rocket photo gallery" tabindex="0">
+            <div class="project-carousel__viewport">
+              <div class="project-carousel__track">
+                <figure class="project-carousel__slide">
+                  <img src="./images/Cold_Flows_1.jpg" alt="Northstar rocket during cold-flow testing">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/contact-image.jpg" alt="Northstar rocket team member at the launch site">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/GSE_Cart.jpg" alt="Ground support equipment cart for rocket fill operations">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/on_the_ladder.jpg" alt="Team member working on the rocket from a ladder">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/posing.jpg" alt="Northstar rocket team member posing with the vehicle">
+                </figure>
+              </div>
+            </div>
+            <div class="project-carousel__controls">
+              <button class="project-carousel__button" type="button" data-carousel-previous aria-label="Previous photo">←</button>
+              <div class="project-carousel__dots" aria-label="Choose a photo"></div>
+              <button class="project-carousel__button" type="button" data-carousel-next aria-label="Next photo">→</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -77,41 +99,22 @@
       <div class="row">
         <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
-          <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
           <div class="challenge-grid">
             <article class="challenge-card">
               <span class="challenge-card__number" aria-hidden="true">01</span>
-              <h3>Getting past solenoid stiction</h3>
+              <h3>Designing for High-Pressure Connections</h3>
               <dl class="challenge-card__steps">
                 <div class="challenge-card__step">
                   <dt>Problem</dt>
-                  <dd>Small valve commands produced no load change until a threshold was reached. Load then jumped, often overshooting the ramped setpoint. I suspected static friction in the spool.</dd>
+                  <dd>High pressure caused frequent leaks throughout the pressurant systems. In cold flows, a faulty COPV compression fitting caused a major pressure drop and a physical jolt of the tank during testing.</dd>
                 </div>
                 <div class="challenge-card__step">
                   <dt>Solution</dt>
-                  <dd>I added Gaussian white noise to the control signal as dither, keeping the spool in the realm of kinetic friction. I also reduced the load increase rate and removed the integral term on increasing load.</dd>
+                  <dd>I added torque stripes to joints and examined the strengths and limitations of the compression and NPT fittings used throughout the rocket.</dd>
                 </div>
                 <div class="challenge-card__step challenge-card__step--outcome">
                   <dt>Outcome</dt>
-                  <dd>The stepped response on load increase was improved.</dd>
-                </div>
-              </dl>
-            </article>
-            <article class="challenge-card">
-              <span class="challenge-card__number" aria-hidden="true">02</span>
-              <h3>Keeping progress moving while parts shipped</h3>
-              <dl class="challenge-card__steps">
-                <div class="challenge-card__step">
-                  <dt>Problem</dt>
-                  <dd>Selecting parts for the entire system meant coordinating multiple vendors. Procurement took 2 weeks longer than I expected.</dd>
-                </div>
-                <div class="challenge-card__step">
-                  <dt>Solution</dt>
-                  <dd>I worked in parallel: while hardware was on order, I wrote the LabVIEW state machine and modeled the system in NX.</dd>
-                </div>
-                <div class="challenge-card__step challenge-card__step--outcome">
-                  <dt>Outcome</dt>
-                  <dd>The wait became development time, with software being plug and play as soon as the hardware arrived.</dd>
+                  <dd>I gained practical experience with high-pressure connections and fitting selection.</dd>
                 </div>
               </dl>
             </article>
@@ -124,22 +127,31 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
+        <div class="project-content project-content--with-media">
+          <div class="project-content__body">
           <h2>Results</h2>
           <div class="project-deliverables">
             <div class="deliverable-item">
-              <h3>Successful load application within setpoint requirements</h3>
+              <h3>Liftoff!</h3>
               <p>
-                Automated control of load with a ramp and soak setpoint profile.
+                In May 2026, Northstar achieved liftoff from the Mojave Desert. It was a collective effort to which I was proud to have contributed.              
               </p>
             </div>
             <div class="deliverable-item">
-              <h3>Decreased runtime from 1 hour to 5 minutes</h3>
+              <h3>GSE Cart</h3>
               <p>
-                Saved engineer time by automatically adding load to the system and acquiring data. Especially important as this is a test that is conducted for every production unit.
+                I helped integrate a cart for GN2 fill operations, connecting the source (K-bottles) to the tank (COPV).
+              </p>
+            </div>
+            <div class="deliverable-item">
+              <h3>GN2 Fill Modeling</h3>
+              <p>
+                Used Engineering Equation Solver (EES) to model pressure drop across pipes, hoses, and fittings in the rocket, allowing me to size an orifice intended to slow down COPV fill. Without the orifice, the COPV would get extremely hot.
               </p>
             </div>
           </div>
+          </div>
+          <img class="project-results__image" src="./images/IMG_0242.JPG" alt="Northstar rocket" loading="lazy" />
         </div>
       </div>
     </section>

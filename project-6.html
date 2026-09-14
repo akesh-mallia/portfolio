@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
-  <title>Intro to ME Crane | Akesh Mallia</title>
+  <title>NASA CubeSats | Akesh Mallia</title>
 
   <meta name="description" content="Learn about this project and what I built.">
   <link rel="stylesheet" href="index.css" />
@@ -35,14 +35,14 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/project-6.JPG');">
+    <section class="project-hero" style="background-image: url('./images/IMG_3555_uncropped.jpeg');">
       <div class="row">
         <div class="project-hero__content">
-          <h1 class="project-hero__heading">Intro to ME Crane</h1>
+          <h1 class="project-hero__heading">NASA CubeSats</h1>
           <div class="project-hero__badge">
             <span class="project-hero__year">2024</span>
-            <a class="project-hero__logo-link" href="https://engineering.wisc.edu/departments/mechanical-engineering/">
-              <img class="project-hero__logo" src="./images/logos/uw.png" alt="University of Wisconsin" width="72" height="72" />
+            <a class="project-hero__logo-link" href="https://etd.gsfc.nasa.gov/">
+              <img class="project-hero__logo" src="./images/logos/nasa.png" alt="NASA" width="72" height="72" />
             </a>
           </div>
         </div>
@@ -50,44 +50,19 @@
     </section>
 
     <!-- ***** What It Was ***** -->
-    <section class="project-section">
+
+      <section class="project-section">
       <div class="row">
         <div class="project-content project-content--with-media">
           <div class="project-content__body">
             <h2>Background</h2>
             <p>
-              ME 201 is the introduction to mechanical engineering course, where throughout the semester, I worked on a crane project in a group of three. The crane needed to fit within size and weight (900 g) restrictions, and critically, it needed to lift 1.75 kg.
-            </p>
-            <p>
-           	  The design we picked leveraged a block-and-tackle pulley system for mechanical advantage. It was largely constructed of laser-cut acrylic sheets, as well as 3D-printed brackets. My contributions to the team were focused on manufacturing, assembly, and testing.
+              Across two internships at the NASA Goddard Space Flight Center in the summers of 2023 and 2024, I worked on two CubeSat projects. These were proof-of-concept missions built with fellow interns. In the first summer, I was the payload engineer, working on a CubeSat intending to provide a third-person perspective for the OSAM-1 mission. The second summer, since I had some experience working on CubeSats, I became the team lead, guiding 11 other interns through a laser wireless power transfer CubeSat mission.
             </p>
           </div>
-          <div class="project-carousel" aria-label="Crane photo gallery" tabindex="0">
-            <div class="project-carousel__viewport">
-              <div class="project-carousel__track">
-                <figure class="project-carousel__slide">
-                  <img src="./images/crane1.JPG" alt="Crane in use">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/crane2.JPG" alt="Side view">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/crane3.JPG" alt="Front view">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/crane4.JPG" alt="Block and tackle pulley system">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/crane5.JPG" alt="Counterweight system">
-                </figure>
-              </div>
-            </div>
-            <div class="project-carousel__controls">
-              <button class="project-carousel__button" type="button" data-carousel-previous aria-label="Previous photo">←</button>
-              <div class="project-carousel__dots" aria-label="Choose a photo"></div>
-              <button class="project-carousel__button" type="button" data-carousel-next aria-label="Next photo">→</button>
-            </div>
-          </div>
+          <figure class="project-media">
+            <img class="project-media__content" src="./images/project-4.png" alt="CAD model of CubeSat with laser wireless power transfer system">
+          </figure>
         </div>
       </div>
     </section>
@@ -96,37 +71,29 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content project-content--with-media">
-          <div class="project-content__body">
+        <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
           <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
-          <div class="challenge-grid challenge-grid--beside-media">
+          <div class="challenge-grid">
             <article class="challenge-card">
               <span class="challenge-card__number" aria-hidden="true">01</span>
-              <h3>Tracing a fracture back to the pulley</h3>
+              <h3>Leading across subsystem boundaries</h3>
               <dl class="challenge-card__steps">
                 <div class="challenge-card__step">
                   <dt>Problem</dt>
-                  <dd>As the pulley spooled, the string would climb up the pulley wall. Eventually, the force of gravity overcame friction, and the string would slip back into the pulley groove. This dropped the load momentarily, causing a shock to travel through the boom and in one test, fracture the acrylic chassis.</dd>
+                  <dd>Coordinating the CubeSat team required enough understanding of each subsystem to recognize its blockers and support its progress.</dd>
                 </div>
                 <div class="challenge-card__step">
                   <dt>Solution</dt>
-                  <dd>I 3D printed a guide to center the string on the pulley and increased the cross-section of chassis sections through SOLIDWORKS Simulation FEA analysis.</dd>
+                  <dd>I made time to talk with each team about its process and used the NASA Systems Engineering Handbook to guide my approach.</dd>
                 </div>
                 <div class="challenge-card__step challenge-card__step--outcome">
                   <dt>Outcome</dt>
-                  <dd>The string was spooled onto the pulley in a controlled way, preventing other incidents of acrylic fracture.</dd>
+                  <dd>I built a broader understanding of subsystem needs and gained experience coordinating engineering work.</dd>
                 </div>
               </dl>
             </article>
           </div>
-          </div>
-          <figure class="project-media">
-            <video class="project-media__content" autoplay muted loop playsinline controls aria-label="Crane pulley shock demonstration">
-              <source src="./images/craneshock.mp4" type="video/mp4">
-              Your browser does not support embedded video.
-            </video>
-          </figure>
         </div>
       </div>
     </section>
@@ -139,19 +106,18 @@
           <h2>Results</h2>
           <div class="project-deliverables">
             <div class="deliverable-item">
-              <h3>Successful lift of 1.75 kg during the class competition</h3>
+              <h3>Two completed flat-sats</h3>
               <p>
-                We accomplished what we set out to do: lift the load for as little mass as we could.
+                A flat sat is a fully integrated satellite that has not yet been put into the form of a CubeSat. It allows benchtop testing of the various subsystems to be completed.
               </p>
             </div>
             <div class="deliverable-item">
-              <h3>Gained new skills from my first semester</h3>
+              <h3>End-of-summer presentations</h3>
               <p>
-                Built CAD assembly in SOLIDWORKS, motor code in Arduino IDE, basic breadboard circuits, and Excel calculators of stability/lift time.
+                Presented to subject matter experts across the Engineering and Technology Directorate (ETD), as well as to high school students in the Space Summit DC (2023).
               </p>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
