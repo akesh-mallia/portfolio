@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
-  <title>Northstar Rocket | Akesh Mallia</title>
+  <title>High-Pressure Quick Disconnect | Akesh Mallia</title>
 
   <meta name="description" content="Learn about this project and what I built.">
   <link rel="stylesheet" href="index.css" />
@@ -35,12 +35,16 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/project-2.jpg');">
+    <section class="project-hero" style="background-image: url('./images/project-1.JPG');">
       <div class="row">
         <div class="project-hero__content">
-          <h1 class="project-hero__heading">Northstar Rocket</h1>
-          <p class="project-hero__subtitle">Wisconsin Space Program (WISP)</p>
-          <p class="project-hero__subtitle">2026</p>
+          <h1 class="project-hero__heading">High-Pressure Quick Disconnect</h1>
+          <div class="project-hero__badge">
+            <span class="project-hero__year">2026</span>
+            <a class="project-hero__logo-link" href="https://wisconsinspace.com/">
+              <img class="project-hero__logo" src="./images/logos/wisp.png" alt="WISP" width="72" height="72" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -53,38 +57,15 @@
           <div class="project-content__body">
             <h2>Background</h2>
             <p>
-              A liquid rocket powered by isopropyl alcohol and liquid oxygen. The rocket is 13.5 feet tall and 8 inches in diameter, with a thrust of 1000 lbf. This marks the first liquid rocket developed in the state of Wisconsin.
+              To fill our pressure-fed liquid rocket with gaseous nitrogen (GN2), the Wisconsin Space Program (WISP) needed a high-pressure (4,000 psi) fill line. Per competition rules, this fill line could not be remotely detached once the fill is complete. So, in Spring 2026, I owned a project for a remotely actuated quick disconnect for this fill line.
             </p>
             <p>
-              My contributions were largely in the ground support equipment (GSE) of the rocket, specifically in enabling the smooth fill operations of the vehicle.
+              This was done via a system that siphoned some of the GN2 from the fill to pressurize a pneumatic cylinder that pushed out an arm, releasing the disconnect socket.
             </p>
           </div>
-          <div class="project-carousel" aria-label="Northstar Rocket photo gallery" tabindex="0">
-            <div class="project-carousel__viewport">
-              <div class="project-carousel__track">
-                <figure class="project-carousel__slide">
-                  <img src="./images/Cold_Flows_1.jpg" alt="Northstar rocket during cold-flow testing">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/contact-image.jpg" alt="Northstar rocket team member at the launch site">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/GSE_Cart.jpg" alt="Ground support equipment cart for rocket fill operations">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/on_the_ladder.jpg" alt="Team member working on the rocket from a ladder">
-                </figure>
-                <figure class="project-carousel__slide">
-                  <img src="./images/posing.jpg" alt="Northstar rocket team member posing with the vehicle">
-                </figure>
-              </div>
-            </div>
-            <div class="project-carousel__controls">
-              <button class="project-carousel__button" type="button" data-carousel-previous aria-label="Previous photo">←</button>
-              <div class="project-carousel__dots" aria-label="Choose a photo"></div>
-              <button class="project-carousel__button" type="button" data-carousel-next aria-label="Next photo">→</button>
-            </div>
-          </div>
+          <figure class="project-media">
+            <img class="project-media__content" src="./images/QD_CAD.png" alt="CAD model of the high-pressure quick disconnect">
+          </figure>
         </div>
       </div>
     </section>
@@ -93,12 +74,46 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
+        <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
-          <h3> High Pressure </h3>
-          <p> 
-            The high pressure ratings necessary for our fluid systems was a frequent challenge. In one instance, we had a major failure at cold flows because the fitting connecting to the COPV leaked, causing a massive drop in pressure and a physical jolt of the tank. To solution this, I did the simple thing of applying torque stripes to joints, and I got intimately familiar with the strengths and weaknesses of different fittings on the rocket, including compression and NPT.
-          </p>
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">01</span>
+              <h3>A slow, not quick, disconnect</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>During April 2026 cold flows, the disconnect failed. The cylinder actuated, but the line did not release for about a minute, where finally, it popped off.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I reproduced the failure and traced it to an unvented fill line. Pressure forced the socket bearings against the plug, preventing separation. I changed the procedure to always vent the line before separation.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>The system separated successfully in every subsequent test and at launch.</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">02</span>
+              <h3>Making room for the airframe</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd> My initial design did not account for the airframe, as it was not manfucatured yet. However, once integrated, the airframe blocked the piston arm at certain clocked positions.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I removed an adapter by rearranging the fluid fittings and 3D printed a piston-arm spacer to move the pneumatic cylinder's travel away from the airframe.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>The revised packaging shortened the disconnect and provided clearance for the arm. I learned to design around neighboring subsystems from the start.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -107,27 +122,28 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
-          <h2>Results</h2>
-          <div class="project-deliverables">
-            <div class="deliverable-item">
-              <h3>Liftoff!</h3>
-              <p>
-                In May 2026, Northstar achieved liftoff from the Mojave Desert. It was a collective effort to which I was proud to have contributed.              
-              </p>
+        <div class="project-content project-content--with-media">
+          <div class="project-content__body">
+            <h2>Results</h2>
+            <div class="project-deliverables">
+              <div class="deliverable-item">
+                <h3>Separation Success!</h3>
+                <p>On May 30, 2026, the disconnect separated, allowing for the launch of Northstar. This makes for a 100% success rate during flight scenarios :)</p>
+              </div>
+              <div class="deliverable-item">
+                <h3>Pneumatic quick disconnect</h3>
+                <p>The device and its parts are now in-house, with application to future launch vehicles.</p>
+              </div>
             </div>
-            <div class="deliverable-item">
-              <h3>GSE Cart</h3>
-              <p>
-                I helped integrate a cart for GN2 fill operations, connecting the source (K-bottles) to the tank (COPV).
-              </p>
-            </div>
-            <div class="deliverable-item">
-              <h3>Pressure Modeling</h3>
-              <p>
-                Used Engineering Equation Solver (EES) to model pressure drop across pipes, hoses, and fittings in the rocket, allowing me to size an orifice intended to slow down COPV fill. Without the orifice, the COPV could have gotten extremely hot.
-              </p>
-            </div>
+            <p>
+              Overall, I learned a lot about the design cycle in aerospace through this project. By designing, testing, and verifying the device, I gained experience in common struggles of a project: most notably, neglecting to consider other subsystems when designing. It was incredibly satisfying to see my part actuating and leading to the success of the mission.
+            </p>
+          </div>
+          <figure class="project-media">
+            <video class="project-media__content" autoplay muted loop playsinline controls>
+              <source src="./images/IMG_7424.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
           </div>
         </div>
       </div>

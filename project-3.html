@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
-  <title>Camp Randall Vibrations Research | Akesh Mallia</title>
+  <title>Northstar Rocket | Akesh Mallia</title>
 
   <meta name="description" content="Learn about this project and what I built.">
   <link rel="stylesheet" href="index.css" />
@@ -35,12 +35,16 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/project-3.png');">
+    <section class="project-hero" style="background-image: url('./images/project-2.jpg');">
       <div class="row">
         <div class="project-hero__content">
-          <h1 class="project-hero__heading">Camp Randall Vibrations Research</h1>
-          <p class="project-hero__subtitle">Dynamic Structures and Data (DSD) Lab</p>
-          <p class="project-hero__subtitle">2025-26</p>
+          <h1 class="project-hero__heading">Northstar Rocket</h1>
+          <div class="project-hero__badge">
+            <span class="project-hero__year">2025-2026</span>
+            <a class="project-hero__logo-link" href="https://wisconsinspace.com/">
+              <img class="project-hero__logo" src="./images/logos/wisp.png" alt="WISP" width="72" height="72" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -53,15 +57,38 @@
           <div class="project-content__body">
             <h2>Background</h2>
             <p>
-              “Jump Around” is an infamous tradition at Camp Randall Stadium that can cause noticeable vibrations throughout the bleachers. The stadium’s precise shape in response to these oscillations remains unknown. Previous tests in stadiums used accelerometers attached to points in the stadium. In this approach, data is only acquired at certain structural members in the stadium, and hypothetical cases cannot be tested. Instead, this study tests a 3D-printed model of the stadium on a shaker table. The printed model’s behavior is compared to data collected through cell phone accelerometers in the stadium during a football game. This project aims to use data processing to reveal the stadium's natural frequencies and mode shapes, improving knowledge of how Camp Randall Stadium responds to human-induced vibrations.
+              A liquid rocket powered by isopropyl alcohol and liquid oxygen. The rocket is 13.5 feet tall and 8 inches in diameter, with a thrust of 1000 lbf. This marks the first liquid rocket developed in the state of Wisconsin.
+            </p>
+            <p>
+              My contributions were largely in the ground support equipment (GSE) of the rocket, specifically in enabling the smooth fill operations of the vehicle.
             </p>
           </div>
-          <figure class="project-media">
-            <video class="project-media__content" autoplay muted loop playsinline controls>
-              <source src="./images/camp_randall_mode_2_1.34_hz.mp4" type="video/mp4">
-              Your browser does not support embedded video.
-            </video>
-          </figure>
+          <div class="project-carousel" aria-label="Northstar Rocket photo gallery" tabindex="0">
+            <div class="project-carousel__viewport">
+              <div class="project-carousel__track">
+                <figure class="project-carousel__slide">
+                  <img src="./images/Cold_Flows_1.jpg" alt="Northstar rocket during cold-flow testing">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/contact-image.jpg" alt="Northstar rocket team member at the launch site">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/GSE_Cart.jpg" alt="Ground support equipment cart for rocket fill operations">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/on_the_ladder.jpg" alt="Team member working on the rocket from a ladder">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/posing.jpg" alt="Northstar rocket team member posing with the vehicle">
+                </figure>
+              </div>
+            </div>
+            <div class="project-carousel__controls">
+              <button class="project-carousel__button" type="button" data-carousel-previous aria-label="Previous photo">←</button>
+              <div class="project-carousel__dots" aria-label="Choose a photo"></div>
+              <button class="project-carousel__button" type="button" data-carousel-next aria-label="Next photo">→</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -70,12 +97,28 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
+        <div class="project-content project-content--challenges">
           <h2>Challenges</h2>
-          <h3> Learning Curve </h3>
-          <p> 
-            Starting as a freshman in Spring 2025, this project very quickly stretched my brain by introducing me to concepts like making Fourier transforms. Vibrations and non-linear dynamics can get very complicated quite quickly. I address this challenge by modeling the system in simpler ways (i.e, only a limited number of nodes in a finite element model). I also learn as quickly as I can through using my resources (lectures, professors to ask questions).
-          </p>
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">01</span>
+              <h3>Designing for High-Pressure Connections</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>High pressure caused frequent leaks throughout the pressurant systems. In cold flows, a faulty COPV compression fitting caused a major pressure drop and a physical jolt of the tank during testing.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I added torque stripes to joints and examined the strengths and limitations of the compression and NPT fittings used throughout the rocket.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>I gained practical experience with high-pressure connections and fitting selection.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -86,43 +129,30 @@
       <div class="row">
         <div class="project-content project-content--with-media">
           <div class="project-content__body">
-            <h2>Results</h2>
-            <div class="project-deliverables">
-                <div class="deliverable-item">
-                  <h3>Verified FEA model</h3>
-                  <p>
-                    I am confident the FEA model created in ANSYS for this project matches real-world behavior. This is because the axial acceleration data between the real world and simulation match in the frequency spectrum.
-                  </p>
-                </div>
-                <div class="deliverable-item">
-                  <h3>Presentation at the 2026 UW-Madison Undergraduate Symposium</h3>
-                  <p>
-                    On April 17, 2026, I presented a poster for this project at this symposium. It detailed my findings and spurred future directions for the project.
-                  </p>
-                </div>
-              </div>
+          <h2>Results</h2>
+          <div class="project-deliverables">
+            <div class="deliverable-item">
+              <h3>Liftoff!</h3>
+              <p>
+                In May 2026, Northstar achieved liftoff from the Mojave Desert. It was a collective effort to which I was proud to have contributed.              
+              </p>
             </div>
-            <div class="project-carousel" aria-label="Research Photo Gallery" tabindex="0">
-            <div class="project-carousel__viewport">
-              <div class="project-carousel__track">
-              <figure class="project-carousel__slide">
-                <img src="./images/IMG_6318.JPG" alt="Camp Randall stadium research presentation">
-              </figure>
-              <figure class="project-carousel__slide">
-                <img src="./images/IMG_6292.jpeg" alt="3D-printed Camp Randall stadium model">
-              </figure>
-              <figure class="project-carousel__slide">
-                <img src="./images/IMG_6311.jpeg" alt="Camp Randall vibrations research setup">
-              </figure>
-              </div>
-              </div>
-              <div class="project-carousel__controls">
-                <button class="project-carousel__button" type="button" data-carousel-previous aria-label="Previous photo">←</button>
-                <div class="project-carousel__dots" aria-label="Choose a photo"></div>
-                <button class="project-carousel__button" type="button" data-carousel-next aria-label="Next photo">→</button>
-              </div>
+            <div class="deliverable-item">
+              <h3>GSE Cart</h3>
+              <p>
+                I helped integrate a cart for GN2 fill operations, connecting the source (K-bottles) to the tank (COPV).
+              </p>
+            </div>
+            <div class="deliverable-item">
+              <h3>GN2 Fill Modeling</h3>
+              <p>
+                Used Engineering Equation Solver (EES) to model pressure drop across pipes, hoses, and fittings in the rocket, allowing me to size an orifice intended to slow down COPV fill. Without the orifice, the COPV would get extremely hot.
+              </p>
             </div>
           </div>
+          </div>
+          <img class="project-results__image" src="./images/IMG_0242.JPG" alt="Northstar rocket" loading="lazy" />
+        </div>
       </div>
     </section>
 

@@ -1,3 +1,55 @@
 # Akesh Mallia Portfolio
 
 Credit to Nisar Hassan for the template: https://github.com/nisarhassan12/portfolio-template
+
+
+## Project tile years and organization logos
+
+In `index.html`, find `<!-- Project 1 -->` through `<!-- Project 6 -->`.
+Each tile contains a `PROJECT BADGE` comment followed by:
+
+```html
+<div class="project-tile__badge">
+  <span class="project-tile__year">YYYY</span>
+  <img class="project-tile__logo" src="./images/logos/placeholder.svg" alt="Organization logo placeholder" width="48" height="48" />
+</div>
+```
+
+1. Replace `YYYY` with the project year or range, such as `2026` or `2025–2026`.
+2. Upload your square PNG, SVG, or WebP logo to `images/logos/` on the same branch.
+3. Replace `./images/logos/placeholder.svg` with its exact path, such as `./images/logos/rocket-lab.png`. Filenames are case-sensitive.
+4. Replace the image's `alt` with the organization name, such as `Rocket Lab`.
+
+| Tile | Project |
+| --- | --- |
+| 1 | High-Pressure Quick Disconnect |
+| 2 | Northstar Rocket |
+| 3 | Hydraulic Test Fixture |
+| 4 | Camp Randall Vibrations Research |
+| 5 | NASA CubeSats |
+| 6 | ME 201 Crane |
+
+All six years and logos start as placeholders. The same logo file can be reused on multiple tiles. Logos fit inside a 48-pixel white square without cropping. Badge styling is in the Project Tiles section of `index.css`. Keep the grayscale filter on `.project-tile__image`, not its wrapper, to preserve the badge colors.
+
+Review changes on the feature branch before merging into the live `2026_07_08` branch.
+
+
+## Project hero badges
+
+Each `project-1.html` through `project-6.html` now has a centered badge immediately below its hero heading, replacing the organization and year subtitles. `project-template.html` includes a placeholder version for future projects.
+
+Search for `HERO BADGE` in the project page. Edit the text inside `project-hero__year`, the logo `src`, and its organization `alt` text. Keep these values in sync with the matching tile in `index.html`; these are static HTML copies, so neither updates automatically. Initial values match the current homepage tiles, including NASA's `2024` year.
+
+The `project-hero__badge` styles in `index.css` control the centered layout. Hero logos scale from 60 to 72 pixels while remaining square; the year text scales from 20 to 24 pixels.
+
+
+### Linking a hero logo
+
+In each project HTML file (including the template), search for `ORGANIZATION LINK` and replace `href="#"` on `project-hero__logo-link` with the organization's full URL, such as `href="https://example.com"`. Each logo links independently, so projects can point to specific organization or lab pages. Links open in the same tab. Until you set a URL, `#` is a placeholder that stays on the current page. The year remains plain text.
+
+
+## Challenge cards
+
+Every project page and the template uses a `challenge-grid`. Search for `CHALLENGE CARDS` to edit the section. Each `article.challenge-card` contains a title and a definition list with **Problem**, **Solution**, and **Outcome**. Keep the three labels in that order and use brief, specific descriptions supported by the project.
+
+Duplicate an article to add a challenge and update its decorative number. Two cards sit side by side on desktop; a single card spans the available width. All steps stack on mobile. Styles are grouped at the end of `index.css`; results tiles retain their separate styling.

@@ -583,12 +583,53 @@ body:not(.user-is-tabbing) a:focus {
     opacity: 1;
 }
 
-.project-tile:hover .project-tile__image {
+.project-tile:hover .project-tile__image,
+.project-tile:focus-visible .project-tile__image {
     filter: grayscale(0%) brightness(1);
 }
 
-.project-tile:hover .project-tile__overlay {
+.project-tile:hover .project-tile__overlay,
+.project-tile:focus-visible .project-tile__overlay {
     opacity: 0;
+}
+
+/* Badge is a sibling of the filtered photo, above the colored overlay.
+ * Its opaque background and logo stay the same color on hover/focus.
+ */
+.project-tile__badge {
+    position: absolute;
+    z-index: 1;
+    left: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    max-width: calc(100% - 28px);
+    gap: 10px;
+    padding: 8px 8px 8px 16px;
+    border: 1px solid #344353;
+    border-radius: 22px;
+    background: #111b26;
+    color: #f0e9f2;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .22);
+    pointer-events: none;
+}
+
+.project-tile__year {
+    font-size: 16px;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.project-tile__logo {
+    display: block;
+    flex: 0 0 48px;
+    width: 60px;
+    height: 60px;
+    padding: 4px;
+    border-radius: 10px;
+    background: #fff;
+    object-fit: contain;
 }
 
 .project-tile__content h3 {
@@ -682,6 +723,52 @@ body:not(.user-is-tabbing) a:focus {
     margin-bottom: var(--gutter-small);
     color: var(--white);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Centered, larger version of the homepage tile badge. */
+.project-hero__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: 100%;
+    gap: 14px;
+    margin: 24px auto 0;
+    padding: 10px 10px 10px 22px;
+    border: 1px solid #344353;
+    border-radius: 28px;
+    background: #111b26;
+    color: #f0e9f2;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .22);
+}
+
+.project-hero__year {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(20px, 2.2vw, 24px);
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.project-hero__logo-link {
+    display: block;
+    flex: 0 0 auto;
+    border-radius: 14px;
+}
+
+.project-hero__logo-link:hover,
+.project-hero__logo-link:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
+.project-hero__logo {
+    display: block;
+    flex: 0 0 auto;
+    width: clamp(75px, 6vw, 80px);
+    height: clamp(75px, 6vw, 80px);
+    object-fit: contain;
+    padding: 4px;
+    border-radius: 14px;
+    background: #fff;
 }
 
 .project-hero__subtitle {
@@ -1085,4 +1172,186 @@ body.lightbox-open {
     .footer {
         padding: var(--gutter-medium) 0;
     } 
+}
+
+
+/* Challenge stories: numbered, rounded panels with a distinct outcome footer. */
+.project-content--challenges {
+    max-width: var(--container-max-width);
+}
+
+.challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.challenge-card {
+    min-width: 0;
+    padding: clamp(24px, 3vw, 36px);
+    border: 1px solid #344353;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #172330, #10151c 65%);
+}
+
+.challenge-card__number {
+    display: block;
+    margin-bottom: 16px;
+    color: #8acaff;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.challenge-card h3 {
+    margin: 0 0 26px;
+    font-size: clamp(24px, 2.4vw, 30px);
+    line-height: 1.25;
+}
+
+.challenge-card__steps {
+    display: grid;
+    gap: 24px;
+}
+
+.challenge-card__step dt {
+    margin-bottom: 8px;
+    color: #b9cee0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.challenge-card__step dd {
+    margin: 0;
+    color: #e1e6ed;
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+.challenge-card__step--outcome {
+    padding: 18px 20px;
+    border-top: 1px solid #385369;
+    border-radius: 0 0 12px 12px;
+    background: #1a2c3b;
+}
+
+.challenge-card__step--outcome dt {
+    color: #98d1ff;
+}
+
+/* A single story uses the available width, with its outcome below both columns. */
+.challenge-card:only-child {
+    grid-column: 1 / -1;
+}
+
+.challenge-card:only-child .challenge-card__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.challenge-card:only-child .challenge-card__step--outcome {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 760px) {
+    .challenge-grid,
+    .challenge-card:only-child .challenge-card__steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Unframed photo beside project results; stacks below text on small screens. */
+.project-results__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 85rem;
+    object-fit: contain;
+}
+
+
+/* Unframed image and caption within the existing responsive media layout. */
+.project-figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.project-figure__caption {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white-1);
+}
+
+
+/* Keep challenge steps readable when a video occupies the adjacent column. */
+.challenge-grid--beside-media .challenge-card:only-child .challenge-card__steps {
+    grid-template-columns: 1fr;
+}
+
+
+/* Mobile navigation and hero: keep the menu above, rather than over, the text. */
+@media (max-width: 600px) {
+    .header {
+        position: relative;
+    }
+
+    .nav {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 20px;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    .nav__logo {
+        /* min-content wraps Akesh and Mallia onto separate lines. */
+        width: min-content;
+        font-size: clamp(28px, 7vw, 35px);
+        line-height: 1.15;
+        white-space: normal;
+    }
+
+    .nav__items {
+        min-width: 0;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 4px 12px;
+        font-size: clamp(14px, 3.6vw, 16px);
+    }
+
+    .nav__item:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .nav__link {
+        white-space: nowrap;
+    }
+
+    .home-hero {
+        /* Increase toward 100% to show more of the photo's right side. */
+        background-position: 85% center;
+        background-size: cover;
+        min-height: 75vh;
+        min-height: 75svh;
+        padding: 48px 0;
+    }
+
+    .home-hero > .row {
+        width: 100%;
+    }
+
+    .home-hero .project-hero__heading {
+        font-size: clamp(38px, 9vw, 54px);
+        line-height: 1.15;
+    }
+
+    .home-hero .project-hero__subtitle {
+        font-size: clamp(19px, 4.8vw, 24px);
+        line-height: 1.5;
+    }
 }

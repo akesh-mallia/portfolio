@@ -35,8 +35,17 @@
 
     <section class="project-hero">
       <div class="row">
-        <h1 class="heading-primary">Project Name</h1>
-        <p class="project-hero__subtitle">A brief one-liner about the project</p>
+        <div class="project-hero__content">
+          <h1 class="project-hero__heading">Project Name</h1>
+          <!-- HERO BADGE: keep the year and logo in sync with this project's index.html tile. -->
+          <div class="project-hero__badge">
+            <span class="project-hero__year">YYYY</span>
+            <!-- ORGANIZATION LINK: replace # with the full organization URL (https://...). -->
+            <a class="project-hero__logo-link" href="#">
+              <img class="project-hero__logo" src="./images/logos/placeholder.svg" alt="Organization logo placeholder" width="72" height="72" />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -71,18 +80,29 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
-          <h2>Challenges I Faced</h2>
-          <ul class="challenges-list">
-            <li>First major challenge and how you approached it</li>
-            <li>Second challenge and the obstacles you encountered</li>
-            <li>Technical or personal challenges that tested you</li>
-            <li>How you persevered through difficulties</li>
-          </ul>
-          <p>
-            Elaborate on each challenge. Readers want to understand the struggle, not just the solution. What made these challenges difficult? 
-            How did you think about them differently as you progressed?
-          </p>
+        <div class="project-content project-content--challenges">
+          <h2>Challenges</h2>
+          <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">01</span>
+              <h3>Name the specific engineering challenge</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>Explain what went wrong and why it mattered in one or two sentences.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>Describe your diagnosis, decision, or design change. Focus on what you personally did.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>State the observed result or what you learned. Include a measurement only when supported by your work.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/logo2.png" />
 
-  <title>NASA CubeSats | Akesh Mallia</title>
+  <title>Intro to ME Crane | Akesh Mallia</title>
 
   <meta name="description" content="Learn about this project and what I built.">
   <link rel="stylesheet" href="index.css" />
@@ -35,28 +35,59 @@
 
     <!-- ***** Hero Section ***** -->
 
-    <section class="project-hero" style="background-image: url('./images/project-5.webp');">
+    <section class="project-hero" style="background-image: url('./images/project-6.JPG');">
       <div class="row">
         <div class="project-hero__content">
-          <h1 class="project-hero__heading">Hydraulic Test Fixture</h1>
-          <p class="project-hero__subtitle">Rocket Lab</p>
-          <p class="project-hero__subtitle">2026</p>
+          <h1 class="project-hero__heading">Intro to ME Crane</h1>
+          <div class="project-hero__badge">
+            <span class="project-hero__year">2024</span>
+            <a class="project-hero__logo-link" href="https://engineering.wisc.edu/departments/mechanical-engineering/">
+              <img class="project-hero__logo" src="./images/logos/uw.png" alt="University of Wisconsin" width="72" height="72" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ***** What It Was ***** -->
-
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
-          <h2>Background</h2>
-          <p>
-          	My team has a pull-test fixture used to apply a tensile load on a separation system. The goal of this fixture is to measure preload. However, it has a long runtime because load is currently being manually applied via a lever hydraulic pump. My project is to automate load application via a control system.
-          </p>
-          <p>
-            The system consists of a pump, motor, solenoid control valve, solenoid relief valve, and other valves and fittings. It is operated via a National Instruments (NI) computer running LabVIEW.
-          </p>
+        <div class="project-content project-content--with-media">
+          <div class="project-content__body">
+            <h2>Background</h2>
+            <p>
+              ME 201 is the introduction to mechanical engineering course, where throughout the semester, I worked on a crane project in a group of three. The crane needed to fit within size and weight (900 g) restrictions, and critically, it needed to lift 1.75 kg.
+            </p>
+            <p>
+           	  The design we picked leveraged a block-and-tackle pulley system for mechanical advantage. It was largely constructed of laser-cut acrylic sheets, as well as 3D-printed brackets. My contributions to the team were focused on manufacturing, assembly, and testing.
+            </p>
+          </div>
+          <div class="project-carousel" aria-label="Crane photo gallery" tabindex="0">
+            <div class="project-carousel__viewport">
+              <div class="project-carousel__track">
+                <figure class="project-carousel__slide">
+                  <img src="./images/crane1.JPG" alt="Crane in use">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/crane2.JPG" alt="Side view">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/crane3.JPG" alt="Front view">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/crane4.JPG" alt="Block and tackle pulley system">
+                </figure>
+                <figure class="project-carousel__slide">
+                  <img src="./images/crane5.JPG" alt="Counterweight system">
+                </figure>
+              </div>
+            </div>
+            <div class="project-carousel__controls">
+              <button class="project-carousel__button" type="button" data-carousel-previous aria-label="Previous photo">←</button>
+              <div class="project-carousel__dots" aria-label="Choose a photo"></div>
+              <button class="project-carousel__button" type="button" data-carousel-next aria-label="Next photo">→</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -65,11 +96,37 @@
 
     <section class="project-section">
       <div class="row">
-        <div class="project-content">
+        <div class="project-content project-content--with-media">
+          <div class="project-content__body">
           <h2>Challenges</h2>
-          <h3> To be added once internship is complete... </h3>
-          <p> 
-          </p>
+          <!-- CHALLENGE CARDS: use one article per challenge; keep Problem, Solution, Outcome in this order. -->
+          <div class="challenge-grid challenge-grid--beside-media">
+            <article class="challenge-card">
+              <span class="challenge-card__number" aria-hidden="true">01</span>
+              <h3>Tracing a fracture back to the pulley</h3>
+              <dl class="challenge-card__steps">
+                <div class="challenge-card__step">
+                  <dt>Problem</dt>
+                  <dd>As the pulley spooled, the string would climb up the pulley wall. Eventually, the force of gravity overcame friction, and the string would slip back into the pulley groove. This dropped the load momentarily, causing a shock to travel through the boom and in one test, fracture the acrylic chassis.</dd>
+                </div>
+                <div class="challenge-card__step">
+                  <dt>Solution</dt>
+                  <dd>I 3D printed a guide to center the string on the pulley and increased the cross-section of chassis sections through SOLIDWORKS Simulation FEA analysis.</dd>
+                </div>
+                <div class="challenge-card__step challenge-card__step--outcome">
+                  <dt>Outcome</dt>
+                  <dd>The string was spooled onto the pulley in a controlled way, preventing other incidents of acrylic fracture.</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+          </div>
+          <figure class="project-media">
+            <video class="project-media__content" autoplay muted loop playsinline controls aria-label="Crane pulley shock demonstration">
+              <source src="./images/craneshock.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
         </div>
       </div>
     </section>
@@ -82,11 +139,19 @@
           <h2>Results</h2>
           <div class="project-deliverables">
             <div class="deliverable-item">
-              <h3>To be added once internship is complete...</h3>
+              <h3>Successful lift of 1.75 kg during the class competition</h3>
               <p>
+                We accomplished what we set out to do: lift the load for as little mass as we could.
+              </p>
+            </div>
+            <div class="deliverable-item">
+              <h3>Gained new skills from my first semester</h3>
+              <p>
+                Built CAD assembly in SOLIDWORKS, motor code in Arduino IDE, basic breadboard circuits, and Excel calculators of stability/lift time.
               </p>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
